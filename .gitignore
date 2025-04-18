@@ -1,0 +1,5 @@
+.env
+pubspec_overrides.yaml
+.DS_Store
+*.g.dart
+*.freezed.dart

@@ -1,0 +1,23 @@
+name: models
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.5.4
+
+# Add regular dependencies here.
+dependencies:
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+  typedefs:
+    path: ../typedefs
+
+dev_dependencies:
+  build_runner:
+  freezed: ^3.0.6
+  json_serializable: ^6.9.5
+  mocktail: ^1.0.4
+  test: ^1.25.15
+  lints: ^5.0.0

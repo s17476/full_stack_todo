@@ -2,9 +2,12 @@ name: full_stack_todo
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.5.4
 
 workspace:
   - backend
+  - models
+  - typedefs
+
 dev_dependencies:
   melos: ^6.3.2
