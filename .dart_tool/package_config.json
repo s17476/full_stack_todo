@@ -557,7 +557,7 @@
       "name": "full_stack_todo",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "backend",
@@ -569,16 +569,22 @@
       "name": "models",
       "rootUri": "../models",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "typedefs",
       "rootUri": "../typedefs",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
+    },
+    {
+      "name": "failures",
+      "rootUri": "../failures",
+      "packageUri": "lib/",
+      "languageVersion": "3.7"
     }
   ],
-  "generated": "2025-04-18T20:10:00.096745Z",
+  "generated": "2025-04-18T20:26:18.395962Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///Users/froncz/Documents/flutter",
