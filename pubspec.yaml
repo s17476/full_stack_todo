@@ -9,6 +9,8 @@ workspace:
   - models
   - typedefs
   - failures
+  - data_source
+  - repository
 
 dev_dependencies:
   melos: ^6.3.2

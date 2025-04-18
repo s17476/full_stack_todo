@@ -1,0 +1,24 @@
+name: repository
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.7.2
+
+# Add regular dependencies here.
+dependencies:
+  models:
+    path: ../models
+  failures:
+    path: ../failures
+  typedefs:
+    path: ../typedefs
+  data_source:
+    path: ../data_source
+  fpdart: ^1.1.1
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.24.0
