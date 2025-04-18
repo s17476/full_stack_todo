@@ -1,0 +1,10 @@
+name: full_stack_todo
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+workspace:
+  - backend
+dev_dependencies:
+  melos: ^6.3.2
