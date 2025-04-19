@@ -11,6 +11,7 @@ workspace:
   - failures
   - data_source
   - repository
+  - exceptions
 
 dev_dependencies:
   melos: ^6.3.2
