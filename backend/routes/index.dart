@@ -1,5 +1,15 @@
+import 'package:backend/db/database_connection.dart';
 import 'package:dart_frog/dart_frog.dart';
 
-Response onRequest(RequestContext context) {
-  return Response(body: 'Welcome to Dart Frog!');
+Future<Response> onRequest(RequestContext context) async {
+  final connection = context.read<DatabaseConnection>();
+  await connection.connect();
+
+  final response = await connection.db.execute(
+    'SELECT * FROM information_schema.tables',
+  );
+
+  await connection.close();
+
+  return Response.json(body: response.map((e) => e.toColumnMap()).toList());
 }
