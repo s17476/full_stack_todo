@@ -7,8 +7,12 @@ resolution: workspace
 environment:
   sdk: ^3.7.2
 
-# Add regular dependencies here.
 dependencies:
+  exceptions:
+    path: ../exceptions
+  failures:
+    path: ../failures
+  fpdart: ^1.1.1
   freezed_annotation: ^3.0.0
   json_annotation: ^4.9.0
   typedefs:
