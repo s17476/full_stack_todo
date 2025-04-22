@@ -15,5 +15,5 @@ abstract class TodoRepository {
     required UpdateTodoDto updateTodoDto,
   });
 
-  Future<Either<Failure, void>> deleteTodo(TodoId id);
+  Future<Either<Failure, Unit>> deleteTodo(TodoId id);
 }

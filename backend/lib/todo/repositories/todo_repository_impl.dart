@@ -28,15 +28,18 @@ class TodoRepositoryImpl implements TodoRepository {
   }
 
   @override
-  Future<Either<Failure, void>> deleteTodo(TodoId id) async {
+  Future<Either<Failure, Unit>> deleteTodo(TodoId id) async {
     try {
-      final exists = await getTodoById(id);
+      final failureOrTodo = await getTodoById(id);
 
-      if (exists.isLeft()) return exists;
+      return await failureOrTodo.fold(
+        left,
+        (todo) async {
+          await dataSource.deleteTodoById(id);
 
-      final todo = await dataSource.deleteTodoById(id);
-
-      return Right(todo);
+          return const Right(unit);
+        },
+      );
     } on ServerException catch (e) {
       print(e.message);
 
@@ -113,5 +116,3 @@ class TodoRepositoryImpl implements TodoRepository {
     }
   }
 }
-
-// https://saileshdahal.com.np/building-a-fullstack-app-with-dartfrog-and-flutter-in-a-monorepo-part-4
