@@ -7,6 +7,7 @@ part 'todo.g.dart';
 
 @freezed
 abstract class Todo with _$Todo {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   factory Todo({
     required TodoId id,
     required String title,

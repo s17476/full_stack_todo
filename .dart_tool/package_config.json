@@ -542,12 +542,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "very_good_analysis",
-      "rootUri": "file:///Users/froncz/.pub-cache/hosted/pub.dev/very_good_analysis-7.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.5"
-    },
-    {
       "name": "vm_service",
       "rootUri": "file:///Users/froncz/.pub-cache/hosted/pub.dev/vm_service-15.0.0",
       "packageUri": "lib/",
@@ -644,7 +638,7 @@
       "languageVersion": "3.7"
     }
   ],
-  "generated": "2025-04-19T18:12:26.134278Z",
+  "generated": "2025-04-23T18:43:58.158857Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///Users/froncz/Documents/flutter",

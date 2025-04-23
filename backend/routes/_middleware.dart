@@ -1,4 +1,4 @@
-import 'package:backend/controller/todo_controller.dart';
+import 'package:backend/todo/controller/todo_controller.dart';
 import 'package:backend/db/database_connection.dart';
 import 'package:backend/todo/data_source/todo_data_source_impl.dart';
 import 'package:backend/todo/repositories/todo_repository_impl.dart';

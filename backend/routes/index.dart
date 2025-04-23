@@ -1,15 +1,8 @@
-import 'package:backend/db/database_connection.dart';
+import 'dart:io';
+
 import 'package:dart_frog/dart_frog.dart';
 
-Future<Response> onRequest(RequestContext context) async {
-  final connection = context.read<DatabaseConnection>();
-  await connection.connect();
-
-  final response = await connection.db.execute(
-    'SELECT * FROM information_schema.tables',
-  );
-
-  await connection.close();
-
-  return Response.json(body: response.map((e) => e.toColumnMap()).toList());
-}
+Future<Response> onRequest(RequestContext context) async => Response.json(
+      body: {'error': '👀 Looks like you are lost 🔦'},
+      statusCode: HttpStatus.methodNotAllowed,
+    );

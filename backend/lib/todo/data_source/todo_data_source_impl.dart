@@ -15,10 +15,10 @@ class TodoDataSourceImpl implements TodoDataSource {
       await _databaseConnection.connect();
 
       final result = await _databaseConnection.db.execute(
-        '''
+        Sql.named('''
         INSERT INTO todos (title, description, completed, created_at)
         VALUES (@title, @description, @completed, @created_at) RETURNING *
-        ''',
+        '''),
         parameters: {
           'title': todo.title,
           'description': todo.description,
@@ -52,10 +52,7 @@ class TodoDataSourceImpl implements TodoDataSource {
       await _databaseConnection.connect();
 
       await _databaseConnection.db.execute(
-        '''
-        DELETE FROM todos
-        WHERE id = @id
-        ''',
+        Sql.named('DELETE FROM todos WHERE id = @id'),
         parameters: {'id': id},
       );
     } on PgException catch (e) {
@@ -71,7 +68,7 @@ class TodoDataSourceImpl implements TodoDataSource {
       await _databaseConnection.connect();
 
       final result = await _databaseConnection.db.execute(
-        'SELECT * FROM todos',
+        Sql.named('SELECT * FROM todos'),
       );
 
       final data =
@@ -91,7 +88,7 @@ class TodoDataSourceImpl implements TodoDataSource {
       await _databaseConnection.connect();
 
       final result = await _databaseConnection.db.execute(
-        'SELECT * FROM todos WHERE id = @id',
+        Sql.named('SELECT * FROM todos WHERE id = @id'),
         parameters: {'id': id},
       );
 
@@ -116,7 +113,7 @@ class TodoDataSourceImpl implements TodoDataSource {
       await _databaseConnection.connect();
 
       final result = await _databaseConnection.db.execute(
-        '''
+        Sql.named('''
         UPDATE todos
         SET title = COALESCE(@new_title, title),
             description = COALESCE(@new_description, description),
@@ -124,7 +121,7 @@ class TodoDataSourceImpl implements TodoDataSource {
             updated_at = current_timestamp
         WHERE id = @id
         RETURNING *
-        ''',
+        '''),
         parameters: {
           'id': id,
           'new_title': todo.title,
