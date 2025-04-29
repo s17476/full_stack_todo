@@ -12,7 +12,7 @@ sealed class Failure with _$Failure {
   const factory Failure.network({
     required String message,
     required int statusCode,
-    @Default([]) List<String> errors,
+    @Default({}) Map<String, List<String>> errors,
   }) = NetworkFailure;
 
   const factory Failure.request({

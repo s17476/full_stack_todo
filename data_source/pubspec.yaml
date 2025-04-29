@@ -9,6 +9,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  fpdart: ^1.1.1
   models:
     path: ../models
   typedefs:

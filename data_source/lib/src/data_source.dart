@@ -1,3 +1,4 @@
+import 'package:fpdart/fpdart.dart';
 import 'package:models/models.dart';
 import 'package:typedefs/typedefs.dart';
 
@@ -10,5 +11,5 @@ abstract class TodoDataSource {
 
   Future<Todo> updateTodo({required TodoId id, required UpdateTodoDto todo});
 
-  Future<void> deleteTodoById(TodoId id);
+  Future<Unit> deleteTodoById(TodoId id);
 }

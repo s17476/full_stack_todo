@@ -1,4 +1,5 @@
 import 'package:data_source/data_source.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:fullstack_todo/data/data_source/todo_http_client/todos_http_client.dart';
 import 'package:injectable/injectable.dart';
 import 'package:models/models.dart';
@@ -14,7 +15,11 @@ class TodosRemoteDataSource implements TodoDataSource {
   Future<Todo> createTodo(CreateTodoDto todo) => httpClient.createTodo(todo);
 
   @override
-  Future<void> deleteTodoById(TodoId id) => httpClient.deleteTodoById(id);
+  Future<Unit> deleteTodoById(TodoId id) async {
+    await httpClient.deleteTodoById(id);
+
+    return unit;
+  }
 
   @override
   Future<List<Todo>> getAllTodo() => httpClient.getAllTodo();

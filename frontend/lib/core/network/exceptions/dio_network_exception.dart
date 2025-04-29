@@ -4,6 +4,7 @@ import 'package:exceptions/exceptions.dart';
 class DioNetworkException extends DioException implements NetworkException {
   DioNetworkException({
     required this.errors,
+    required super.response,
     required super.message,
     required super.requestOptions,
   });

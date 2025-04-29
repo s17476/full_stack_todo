@@ -1,6 +1,7 @@
 import 'package:backend/db/database_connection.dart';
 import 'package:data_source/data_source.dart';
 import 'package:exceptions/exceptions.dart' as exc;
+import 'package:fpdart/fpdart.dart';
 import 'package:models/models.dart';
 import 'package:postgres/postgres.dart';
 import 'package:typedefs/typedefs.dart';
@@ -47,7 +48,7 @@ class TodoDataSourceImpl implements TodoDataSource {
   }
 
   @override
-  Future<void> deleteTodoById(TodoId id) async {
+  Future<Unit> deleteTodoById(TodoId id) async {
     try {
       await _databaseConnection.connect();
 
@@ -55,6 +56,8 @@ class TodoDataSourceImpl implements TodoDataSource {
         Sql.named('DELETE FROM todos WHERE id = @id'),
         parameters: {'id': id},
       );
+
+      return unit;
     } on PgException catch (e) {
       throw exc.ServerException(e.message);
     } finally {
