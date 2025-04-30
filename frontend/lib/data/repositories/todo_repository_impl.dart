@@ -54,5 +54,3 @@ class TodoRepositoryImpl implements TodoRepository {
     }
   }
 }
-
-// https://saileshdahal.com.np/building-a-fullstack-app-with-dartfrog-and-flutter-in-a-monorepo-part-5?source=more_series_bottom_blogs#heading-creating-showtodosview

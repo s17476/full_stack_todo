@@ -1,10 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:failures/failures.dart';
 import 'package:fullstack_todo/core/network/exceptions/dio_network_exception.dart';
+import 'package:fullstack_todo/core/utils/logger.dart';
 
 class NetworkErrorInterceptor extends Interceptor {
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
+    Log.e(err);
+
     const genericInternetIssue =
         'Please check your internet connection and try again';
 

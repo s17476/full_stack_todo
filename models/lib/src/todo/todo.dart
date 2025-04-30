@@ -12,7 +12,7 @@ abstract class Todo with _$Todo {
     required TodoId id,
     required String title,
     @Default('') String description,
-    @Default(false) bool? completed,
+    @Default(false) bool completed,
     @DateTimeConverter() required DateTime createdAt,
     @DateTimeConverterNullable() DateTime? updatedAt,
   }) = _Todo;
