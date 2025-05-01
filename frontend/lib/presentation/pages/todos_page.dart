@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fullstack_todo/presentation/blocs/cubit/todos_cubit.dart';
+import 'package:fullstack_todo/presentation/pages/maintain_todo_page.dart';
 import 'package:fullstack_todo/presentation/widgets/todo_list_tile.dart';
 
 class TodosPage extends StatelessWidget {
@@ -11,7 +12,10 @@ class TodosPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Todos')),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed:
+            () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const MaintainTodoPage()),
+            ),
         child: const Icon(Icons.add),
       ),
       body: BlocBuilder<TodosCubit, TodosState>(
